@@ -1,0 +1,44 @@
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Categories</title>
+</head>
+
+<body>
+
+	<div ng-include="setNavigationBar.url"
+		ng-init="checkIfUserIsLoggedIn()"></div>
+
+	<header id="head" class="secondary"></header>
+	<!-- container -->
+	<div class="container">
+
+
+		<ol class="breadcrumb">
+			<li><a href="#/home">Home</a></li>
+			<li class="active">Categories</li>
+		</ol>
+
+		<div class="row">
+
+			<article class="col-sm-8 maincontent">
+				<header class="page-header">
+					<h1 class="page-title">Available catgories</h1>
+					<p>
+						Below you can find all the resources that you can book. Click and
+						choose what you want and go on. <br> Remember, if you want to
+						go on you must be logged in! <br>If you still haven't got an
+						account- <a href="#/signup">Sign up</a>
+					</p>
+		</div>
+		<br> <br>
+		<div ng-include="isUserLoggedIn.url"></div>
+
+	</div>
+	</div>
+	<!-- /container -->
+
+	<div ng-include="footer.url"></div>
+</body>
+
+</html>

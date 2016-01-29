@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Books</title>
+</head>
+
+<body>
+	<div ng-include="setNavigationBar.url"
+		ng-init="checkIfUserIsLoggedIn()"></div>
+
+	<header id="head" class="secondary"></header>
+
+	<!-- container -->
+	<div class="container">
+
+		<ol class="breadcrumb">
+			<li><a href="#/home">Home</a></li>
+			<li><a href="#/categories">Categories</a></li>
+			<li class="active">Books</li>
+		</ol>
+
+		<div class="row">
+
+			<!-- Article main content -->
+			<article class="col-sm-6 maincontent">
+				<header class="page-header">
+					<h1 class="page-title">Get a book</h1>
+					<p>
+						In this section you can choose a book that interests you.<br>
+						Remember, you can get only one book if it is available.<br>
+						Information about your book you will find at - <a
+							href="#/myAccount">My account</a>
+					</p>
+				</header>
+
+				<select size="10" class="form-control" ng-model="selectedItem"
+					ng-options="book as book.label for book in books"
+					ng-change="getBookInfo()">
+				</select> <br> <br>
+
+				<div id="bookInfoDiv" style="display: none">
+					<h4>Title : {{ title}}</h4>
+					<br>
+					<h4>Author : {{ author}}</h4>
+					<br>
+					<h4>{{isFree}}</h4>
+					<br>
+					<div id="reserveButtonDiv" style="display: block">
+						<button class="btn btn-info" ng-click="reserveBook()">Borrow
+							a book</button>
+					</div>
+					<div id="buttonBlockedDiv" style="display: none">
+						<h4>
+							You can borrow only one book!&nbsp &nbsp &nbsp &nbsp
+							<button class="btn btn-info" ng-click="returnBook()">Return
+								a book</button>
+						</h4>
+					</div>
+				</div>
+			</article>
+
+			<aside class="col-sm-5 sidebar sidebar-right">
+				<div id="bookCoverDiv" style="display: none">
+					<img id="cover" align="right" width="300">
+				</div>
+			</aside>
+		</div>
+	</div>
+	<br>
+	<br>
+	<br>
+
+
+
+	<!-- /container -->
+
+
+	<div ng-include="footer.url"></div>
+</body>
+</html>

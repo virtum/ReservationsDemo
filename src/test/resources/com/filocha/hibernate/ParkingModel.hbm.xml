@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2015-12-04 20:52:08 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+	<class name="com.filocha.hibernate.ParkingModel" table="PARKING">
+		<id name="id" type="int">
+			<column name="ID" />
+			<generator class="assigned" />
+		</id>
+		<property name="parkingName" type="java.lang.String">
+			<column name="PARKINGNAME" />
+		</property>
+		<property name="placeNumber" type="int">
+			<column name="PLACENUMBER" />
+		</property>
+		<property name="isFree" type="boolean" access="field">
+			<column name="ISFREE" />
+		</property>
+		<property name="ownerEmail" type="java.lang.String">
+			<column name="OWNEREMAIL" />
+		</property>
+	</class>
+</hibernate-mapping>

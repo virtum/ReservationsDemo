@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2015-12-15 23:36:22 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+	<class name="com.filocha.hibernate.TrainingModel" table="TRAINING">
+		<id name="id" type="int">
+			<column name="ID" />
+			<generator class="increment" />
+		</id>
+		<property name="title" type="java.lang.String">
+			<column name="TITLE" />
+		</property>
+		<property name="lecturer" type="java.lang.String">
+			<column name="LECTURER" />
+		</property>
+		<property name="description" type="java.lang.String">
+			<column name="DESCRIPTION" />
+		</property>
+		<property name="trainingDate" type="java.util.Date">
+			<column name="TRAININGDATE" />
+		</property>
+		<list name="participantsList" inverse="false" table="PARTICIPANTS"
+			lazy="false">
+			<key>
+				<column name="TRAININGID" not-null="true" />
+			</key>
+			<list-index column="idx">
+			</list-index>
+			<one-to-many class="com.filocha.hibernate.ParticipantsListModel" />
+		</list>
+		<property name="seats" type="int">
+			<column name="SEATS" />
+		</property>
+	</class>
+</hibernate-mapping>

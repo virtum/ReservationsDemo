@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>My account</title>
+</head>
+
+<body>
+	<div ng-include="setNavigationBar.url"
+		ng-init="checkIfUserIsLoggedIn()"></div>
+	<header id="head" class="secondary"></header>
+
+	<div class="container">
+		<article class="col-sm-12 maincontent">
+			<header class="page-header">
+				<h1 class="page-title">Your data:</h1>
+			</header>
+
+			<table class="table table-hover">
+				<thead>
+					<tr>
+						<th>Name</th>
+						<th>Last name</th>
+						<th>Email</th>
+						<th>Password</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>{{firstName}}</td>
+						<td>{{lastName}}</td>
+						<td>{{email}}</td>
+						<td>{{password}}</td>
+					</tr>
+				</tbody>
+			</table>
+		</article>
+
+		<article class="col-sm-12 maincontent">
+			<header class="page-header">
+				<h1 class="page-title">Your resources:</h1>
+			</header>
+
+			<h2 class="col-sm-6">Parking:</h2>
+
+			<div id="haveParkingDiv" style="display: none">
+				<h2 class="col-sm-6">Parking {{parkingName}} - place number
+					{{placeNumber}}</h2>
+			</div>
+
+			<div class="col-sm-6" id="withoutParkingDiv" style="display: none">
+				<h2>None!</h2>
+			</div>
+
+			<h2 class="col-sm-6">Book:</h2>
+
+			<div class="col-sm-6" id="haveBookDiv" style="display: none">
+				<h2>Title: {{title}}</h2>
+				<h2>Author: {{author}}</h2>
+			</div>
+			<div class="col-sm-6" id="noBookDiv" style="display: none">
+				<h2>None!</h2>
+			</div>
+
+			<h2 class="col-sm-12" align="center">Trainings:</h2>
+
+			<div id="userTrainingsDiv" class="col-sm-12" align="center"
+				class="widget" style="display: none;">
+				<ul id="trainingsList" class="list-unstyled list-spaces">
+
+					<!-- 		li elements creating automatically from code -->
+				</ul>
+			</div>
+
+			<div class="col-sm-12" align="center" id="noTrainingsDiv"
+				style="display: none">
+				<h2>None!</h2>
+			</div>
+
+		</article>
+	</div>
+
+	<div ng-include="footer.url"></div>
+
+</body>
+</html>

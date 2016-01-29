@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Make a reservation today!</title>
+</head>
+
+<body>
+	<div ng-include="setNavigationBar.url" ng-init="checkIfUserIsLoggedIn()"></div>
+
+	<!-- Header -->
+	<header id="head">
+		<div class="container">
+			<div class="row">
+				<h1 class="lead">DON'T WSTE YOUR TIME, BOOK NOW!</h1>
+				<p class="tagline">Simple and easy way to get what you want</p>
+				<p>
+					<a class="btn btn-default btn-lg" href="#/about" role="button">More information</a> <a class="btn btn-action btn-lg" href="#/categories"
+						"role="button">Book</a>
+				</p>
+			</div>
+		</div>
+	</header>
+	<!-- /Header -->
+
+	<!-- Intro -->
+	<div class="container text-center">
+		<br> <br>
+		<h2 class="thick">Someone was faster?</h2>
+		<p class="text-muted">
+			Don't let anyone to take once again this opportunity away from you. Let know 
+			your coworkers.<br> Just create an account and book whatever you want.<br>
+		</p>
+	</div>
+	<!-- /Intro-->
+
+	<div ng-include="footer.url"></div>
+
+</body>
+</html>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+                                         "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+	<session-factory name="">
+		<property name="hibernate.connection.driver_class">org.h2.Driver</property>
+		<property name="hibernate.connection.password">*****</property>
+		<!-- <property name="hibernate.connection.url">jdbc:h2:~/reservations</property> -->
+		<property name="hibernate.connection.url">jdbc:h2:tcp://localhost/~/reservationsTest</property>
+		<property name="hibernate.connection.username">virtum</property>
+		<property name="hibernate.dialect">org.hibernate.dialect.H2Dialect</property>
+		<mapping class="com.filocha.hibernate.UserModel" resource="UserModel.hbm.xml" />
+		<mapping class="com.filocha.hibernate.ParkingModel" resource="ParkingModel.hbm.xml" />
+		<mapping class="com.filocha.hibernate.BookModel" resource="BookModel.hbm.xml" />
+		<mapping class="com.filocha.hibernate.ParticipantsListModel"
+			resource="ParticipantsListModel.hbm.xml" />
+		<mapping class="com.filocha.hibernate.TrainingModel" resource="TrainingModel.hbm.xml" />
+	</session-factory>
+</hibernate-configuration>

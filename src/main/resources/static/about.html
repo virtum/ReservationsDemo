@@ -1,0 +1,102 @@
+<html lang="en">
+<head>
+<title>About</title>
+</head>
+
+<body>
+	<div ng-include="setNavigationBar.url"
+		ng-init="checkIfUserIsLoggedIn()"></div>
+
+	<header id="head" class="secondary"></header>
+
+	<!-- container -->
+	<div class="container">
+		<ol class="breadcrumb">
+			<li><a href="#/home">Home</a></li>
+			<li class="active">About</li>
+		</ol>
+
+		<div class="row">
+
+			<!-- Article main content -->
+			<article class="col-sm-12 maincontent">
+				<header class="page-header">
+					<h1 class="page-title">About project</h1>
+				</header>
+				<p>
+					<img src="assets/images/mac.jpg" alt=""
+						class="img-rounded pull-right" width="300">This project
+					gives ability to book company's resources for logged in workers.
+					Users can do many operations, including:
+				</p>
+				<ol>
+					<li>registration,</li>
+					<li>log in,</li>
+					<li>booking different resources,</li>
+					<li>ability to resgin from users resources,</li>
+					<li>ability to see users resources,</li>
+				</ol>
+				<p>and many more. For now users can choose from three
+					categories:
+				<ol>
+					<li>parking places,</li>
+					<li>books,</li>
+					<li>trainings.</li>
+				</ol>
+				</p>
+
+				<div class="col-sm-6">
+					<h2>Tech stack</h2>
+					<h3>Front-end</h3>
+					<ol>
+						<li>JavaScript</li>
+						<li>AngularJS</li>
+						<li>HTML</li>
+						<li>Bootstrap</li>
+						<li>jQuery</li>
+						<li>Css</li>
+					</ol>
+					<h3>Back-end</h3>
+					<ol>
+						<li>Java</li>
+						<li>Spring</li>
+						<li>Hibernate</li>
+						<li>PostgreSQL</li>
+					</ol>
+					<h3>Source code</h3>
+					<p>www.sratata.com</p>
+				</div>
+				<div class="col-sm-6">
+					<h2>Standards & design patterns</h2>
+					<ol>
+						<li>Dependency injection</li>
+						<li>REST</li>
+						<li>Single-page application</li>
+					</ol>
+					<h3>Testing</h3>
+					<ol>
+						<li>JUnit</li>
+						<li>Hamcrest</li>
+						<li>H2 database for tests</li>
+					</ol>
+					<h3>DevTools</h3>
+					<ol>
+						<li>Eclipse</li>
+						<li>Maven</li>
+						<li>Git</li>
+					</ol>
+					<h3>Hosting</h3>
+					<ol>
+						<li><a href="https://www.openshift.com/">Openshift</a></li>
+						<li>Spring</li>
+					</ol>
+				</div>
+			</article>
+			<!-- /Article -->
+		</div>
+	</div>
+	<!-- /container -->
+
+	<div ng-include="footer.url"></div>
+</body>
+</html>

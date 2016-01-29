@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Sign up</title>
+</head>
+
+<body>
+	<div ng-include="navigationBar.url"></div>
+	<header id="head" class="secondary"></header>
+
+	<!-- container -->
+	<div class="container">
+
+		<ol class="breadcrumb">
+			<li><a href="#/home">Home</a></li>
+			<li class="active">Registration</li>
+		</ol>
+
+		<div class="row">
+
+			<!-- Article main content -->
+			<article class="col-xs-12 maincontent">
+				<header class="page-header">
+					<h1 class="page-title">Registration</h1>
+				</header>
+
+				<div id="successDiv" style="display: none"
+					class="alert alert-success">
+					<strong>Success!</strong> Your registration is completed! You can <a
+						href="#/signin">Login in</a> now.
+				</div>
+				<div id="brDiv" style="display: none">
+					<br> <br> <br> <br> <br> <br> <br>
+					<br> <br> <br> <br> <br> <br> <br>
+					<br>
+				</div>
+
+				<div id="errorDiv" style="display: none" class="alert alert-danger">
+					<strong>Fail!</strong> Have you filled all fields?
+				</div>
+
+				<div id="registrationDiv" style="display: block"
+					class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2"
+					ng-controller="registerController">
+					<div class="panel panel-default">
+						<div class="panel-body">
+							<h3 class="thin text-center">Register a new account</h3>
+							<p class="text-center text-muted">
+								If you have an account <a href="#/signin">Login in</a>
+							</p>
+							<hr>
+
+							<form>
+								<div class="top-margin">
+									<label>First Name <span class="text-danger">*</span></label> <input
+										ng-model="Model.firstName" type="text" class="form-control">
+								</div>
+								<div class="top-margin">
+									<label>Last Name <span class="text-danger">*</span></label> <input
+										ng-model="Model.lastName" type="text" class="form-control">
+								</div>
+								<div class="top-margin">
+									<label>Email Address <span class="text-danger">*</span></label>
+									<input ng-change="doesEmailExist()" ng-model="Model.mail"
+										type="text" class="form-control">
+									<div id="emailLabelDiv" style="display: none">
+										<br> <label id="label" class="text-danger">*</label>
+									</div>
+								</div>
+								<div class="top-margin">
+									<label>Password <span class="text-danger">*</span></label> <input
+										ng-model="Model.password" type="password" class="form-control">
+									<br>
+									<p>
+										<span class="text-danger">*</span> Required field
+									</p>
+								</div>
+								<hr>
+								<div class="row">
+									<div class="col-lg-8 text-right">
+										<button class="btn btn-info" ng-click="addNewUser()">Register</button>
+									</div>
+								</div>
+							</form>
+						</div>
+					</div>
+
+				</div>
+
+			</article>
+			<!-- /Article -->
+
+		</div>
+	</div>
+	<!-- /container -->
+
+	<div ng-include="footer.url"></div>
+
+</body>
+</html>

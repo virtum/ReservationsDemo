@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="utf-8">
+<title>Parking places</title>
+</head>
+
+<body>
+	<div id="inDiv" style="display: block"
+		ng-include="setNavigationBarIn.url"></div>
+
+
+	<header id="head" class="secondary"></header>
+
+	<!-- container -->
+	<div class="container">
+
+		<ol class="breadcrumb">
+			<li><a href="#/home">Home</a></li>
+			<li><a href="#/categories">Categories</a></li>
+			<li class="active">Parking places</li>
+		</ol>
+
+		<div class="row">
+
+			<!-- Article main content -->
+			<article class="col-sm-12 maincontent">
+				<header class="page-header">
+					<h1 class="page-title">Get a parking place</h1>
+					<p>
+						In this section you can choose a parking place to book.<br>
+						Remember, you can only get one randomly chosen parking place.<br>
+						If you want to check your parking place go to - <a
+							href="#/myAccount">My account</a>
+					</p>
+				</header>
+				<h3>Select parking :</h3>
+				<p>
+					<img src="assets/images/parking2.jpg" alt=""
+						class="img-rounded pull-right" width="450" height="250">
+				</p>
+				<div class="form-group">
+					<div class="col-sm-4 col-md-4">
+						<select class="form-control" ng-model="selectedItem"
+							ng-options="parking as parking.label for parking in parkings"
+							ng-change="getParkingInfo()">
+						</select>
+
+						<div id="successDiv" style="display: none">
+							<br>
+							<h4 ng-model="parkingName">Parking {{parkingName}}</h4>
+							<h4 ng-model="placesTaken">Places taken : {{placesTaken}}</h4>
+							<h4 ng-model="placesFree">Free places : {{placesFree}}</h4>
+							<br>
+							<button class="btn btn-info" ng-click="reserveParkingPlace()">Sign
+								up for parking place</button>
+						</div>
+
+						<div id="fullDiv" style="display: none">
+							<br>
+							<h4 ng-model="parkingName">Parking {{parkingName}}</h4>
+							<h4 ng-model="placesTaken">Places taken : {{placesTaken}}</h4>
+							<h4 ng-model="placesFree">Free places : {{placesFree}}</h4>
+							<h4>All parking places are taken!</h4>
+							<br>
+						</div>
+
+						<div id="hasPlaceDiv" style="display: none">
+							<br>
+							<h4 ng-model="placesFree">You have already a parking place!</h4>
+							<br>
+							<button class="btn btn-info" ng-click="leaveParkingPlace()">Unsubscribe
+								from parking place</button>
+						</div>
+
+						<div id="errorDiv" style="display: none">
+							<h2>Try again!</h2>
+						</div>
+
+
+					</div>
+
+				</div>
+				<!-- /Article -->
+		</div>
+	</div>
+	<br>
+	<br>
+	<br>
+	<!-- /container -->
+
+	<div ng-include="footer.url"></div>
+</body>
+
+</html>

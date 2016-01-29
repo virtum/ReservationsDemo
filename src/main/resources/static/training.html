@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Staff training</title>
+</head>
+
+<body>
+	<div ng-include="setNavigationBar.url"
+		ng-init="checkIfUserIsLoggedIn()"></div>
+	<header id="head" class="secondary"></header>
+
+	<!-- container -->
+	<div class="container">
+
+		<ol class="breadcrumb">
+			<li><a href="#/home">Home</a></li>
+			<li><a href="#/categories">Categories</a></li>
+			<li class="active">Staff trainings</li>
+		</ol>
+
+		<div class="row">
+
+			<!-- Article main content -->
+			<article class="col-sm-8 maincontent">
+				<div id="mainDiv" style="display: block">
+					<header class="page-header">
+						<h1 class="page-title">Book the place for a training</h1>
+					</header>
+					<p>
+						<img src="assets/images/training2.jpg" alt=""
+							class="img-rounded pull-right" width="300">In this section
+						you can book trainings that suits your interests, there is no
+						limit, you can sign up for all the available courses.
+					</p>
+					<p>
+						On the right there is a list with all the available courses. Click
+						to find out the time, what is it about, who is the lecturer and if
+						there are any available places. You can easily check your
+						trainings at - <a href="#/myAccount">my account</a>.
+					</p>
+				</div>
+
+				<div id="trainingDiv" style="display: none">
+					<header class="page-header">
+						<h1 class="page-title">{{ title }}</h1>
+					</header>
+					<h3>by {{ lecturer }}</h3>
+					<p>
+						<img id="lecturerPhoto" class="img-rounded pull-right" width="300">
+						{{ description }}
+					</p>
+					<p>Date : {{ trainingDate }}</p>
+					<p>Places available : {{ seats }}</p>
+					<br>
+					<div id="signUpButtonDiv" style="display: block">
+						<button ng-click="signUpForTraining()" class="btn btn-info">Sign
+							up for training</button>
+					</div>
+					<div id="signedInDiv" style="display: none">
+						<p>You have already signed up!</p>
+						<button class="btn btn-info" ng-click="unsubscribeFromTraining()">Unsubscribe
+							from training</button>
+					</div>
+				</div>
+			</article>
+			<!-- /Article -->
+
+			<!-- Sidebar -->
+			<aside class="col-sm-4 sidebar sidebar-right">
+
+				<div class="widget">
+					<h4>List of trainings :</h4>
+					<ul id="trainingsList" class="list-unstyled list-spaces">
+
+						<!-- 		li elements creating automatically from code -->
+					</ul>
+				</div>
+
+			</aside>
+			<!-- /Sidebar -->
+
+		</div>
+		<br> <br> <br>
+	</div>
+	<!-- /container -->
+
+	<div ng-include="footer.url"></div>
+
+</body>
+</html>
